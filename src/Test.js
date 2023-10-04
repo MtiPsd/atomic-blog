@@ -26,6 +26,8 @@ function Counter({ children }) {
   );
 }
 
+// Analyze, if you children is an expensive component
+// try to use <Component Composition>
 export default function Test() {
   return (
     <div>
