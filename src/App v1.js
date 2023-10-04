@@ -4,7 +4,6 @@ import {
   usePosts,
   createRandomPost,
 } from "./PostContext";
-import Test from "./Test";
 
 function App() {
   const [isFakeDark, setIsFakeDark] = useState(false);
@@ -132,8 +131,6 @@ function List() {
           </li>
         ))}
       </ul>
-
-      <Test />
     </>
   );
 }
