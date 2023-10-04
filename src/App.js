@@ -25,7 +25,7 @@ function App() {
   // Derived state. These are the posts that will actually be displayed
   const searchedPosts =
     searchQuery.length > 0
-      ? posts.filter(post =>
+      ? posts.filter((post) =>
           `${post.title} ${post.body}`
             .toLowerCase()
             .includes(searchQuery.toLowerCase()),
@@ -33,7 +33,7 @@ function App() {
       : posts;
 
   function handleAddPost(post) {
-    setPosts(posts => [post, ...posts]);
+    setPosts((posts) => [post, ...posts]);
   }
 
   function handleClearPosts() {
@@ -60,7 +60,7 @@ function App() {
     >
       <section>
         <button
-          onClick={() => setIsFakeDark(isFakeDark => !isFakeDark)}
+          onClick={() => setIsFakeDark((isFakeDark) => !isFakeDark)}
           className="btn-fake-dark-mode"
         >
           {isFakeDark ? "☀️" : "🌙"}
@@ -98,7 +98,7 @@ function SearchPosts() {
   return (
     <input
       value={searchQuery}
-      onChange={e => setSearchQuery(e.target.value)}
+      onChange={(e) => setSearchQuery(e.target.value)}
       placeholder="Search posts..."
     />
   );
@@ -145,12 +145,12 @@ function FormAddPost() {
     <form onSubmit={handleSubmit}>
       <input
         value={title}
-        onChange={e => setTitle(e.target.value)}
+        onChange={(e) => setTitle(e.target.value)}
         placeholder="Post title"
       />
       <textarea
         value={body}
-        onChange={e => setBody(e.target.value)}
+        onChange={(e) => setBody(e.target.value)}
         placeholder="Post body"
       />
       <button>Add post</button>
@@ -187,7 +187,7 @@ function Archive() {
   return (
     <aside>
       <h2>Post archive</h2>
-      <button onClick={() => setShowArchive(s => !s)}>
+      <button onClick={() => setShowArchive((s) => !s)}>
         {showArchive ? "Hide archive posts" : "Show archive posts"}
       </button>
 
